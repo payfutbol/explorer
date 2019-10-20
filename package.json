@@ -1,0 +1,40 @@
+{
+  "name": "payfutbol-currencytx",
+  "version": "1.0.0",
+  "description": "Pay futbol blockchain explorer search tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/payfutbol/explorer.git"
+  },
+  "keywords": [
+    "address",
+    "blockchain",
+    "bitcoin",
+    "eth",
+    "ethereum",
+    "ltc",
+    "litecoin",
+    "doge",
+    "etc",
+    "bch",
+    "bnb",
+    "usdt",
+    "search",
+    "deposit",
+    "tx",
+    "transaction"
+  ],
+  "author": "pay futbol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/payfutbol/explorer/issues"
+  },
+  "homepage": "https://github.com/payfutbol/explorer#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
