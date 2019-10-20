@@ -8,12 +8,12 @@ module.exports = {
     baseURL: "https://block.io/api/v2"
   },
   etherscanIoURL: {
-    mainnet: 'https://api.etherscan.io/api?',
-    mainnetcn: 'http://api-cn.etherscan.com/api?',
-    rinkeby: 'https://api-rinkeby.etherscan.io/api?',
-    ropsten: 'https://api-ropsten.etherscan.io/api?',
-    kovan: 'https://api-kovan.etherscan.io/api?',
-    goerli: 'https://api-goerli.etherscan.io/api?',
-    ewc: 'https://api-ewc.etherscan.com/api?',
+    mainnet: 'https://api.etherscan.io',
+    mainnetcn: 'http://api-cn.etherscan.com',
+    rinkeby: 'https://api-rinkeby.etherscan.io',
+    ropsten: 'https://api-ropsten.etherscan.io',
+    kovan: 'https://api-kovan.etherscan.io',
+    goerli: 'https://api-goerli.etherscan.io',
+    ewc: 'https://api-ewc.etherscan.com',
   }
 };
