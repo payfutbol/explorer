@@ -4,9 +4,8 @@
 
 _Multiple third-party channel currencies are consolidated to allow simultaneous query of multiple currencies_
 
-[Github repository: https://github.com/payfutbol/explorer.git](https://github.com/payfutbol/explorer.git)  
 
-> Pay futbol blockchain explorer search tools
+* Pay futbol blockchain explorer search tools
 
 logo | id | name | ver | doc | certified
 -| -| -| -| -| -|
@@ -14,6 +13,7 @@ logo | id | name | ver | doc | certified
 [<img alt="btc.com" src="https://user-images.githubusercontent.com/56773766/68991746-f9609c00-089c-11ea-8560-350f075d8521.png" width=86 height=22 align=center>](https://btc.com) | btc.com | [btc.com](https://btc.com) | 3 | [Api](https://btc.com/api-doc) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
 [<img src="https://user-images.githubusercontent.com/56773766/68991693-74758280-089c-11ea-8eee-4cfe35313e2e.png" alt="SoChain" width=86 height=22 align=center />](https://sochain.com) | SoChain | [SoChain](https://sochain.com) | 2 | [Api](https://sochain.com/api#introduction) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
 [<img src="https://user-images.githubusercontent.com/56773766/68992098-b7862480-08a1-11ea-8026-d124a598a74c.png" alt="Etherscan" width=86 height=22 align=center />](https://etherscan.io/) | Etherscan | [Etherscan](https://etherscan.io/) | * | [Api](https://etherscan.io/apis) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
+[<img src="https://user-images.githubusercontent.com/56773766/68992790-582d1200-08ab-11ea-9bc3-b0c13e37bcc2.png" alt="blockchair" width=86 height=22 aliign=center />](https://blockchair.com/) | Blockchair | [Blockchair](https://blockchair.com/) | 2.0.39 | [Api](https://github.com/Blockchair/Blockchair.Support/blob/master/API_DOCUMENTATION_EN.md) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
 
 
 ### INSTALL 
@@ -47,10 +47,16 @@ import explorer from "payfutbol-currencytx";
       'use strict'
       console.log(res);
     });
+    let blockchairExplorer = new explorer.blockchainExplorer('YourApiKey');
+    blockchairExplorer.setChain('erc20'); //Setting network
+    blockchairExplorer.getStats().then(res=>{
+        console.log(res);
+    })
+    
 ``` 
 
 ### Object initialize 
->    We need different parameters when initializing each channel, so let's give a brief introduction.
+* We need different parameters when initializing each channel, so let's give a brief introduction.
 
 **btcExplorer** from **BTC.com**
 
@@ -61,13 +67,13 @@ This object requires that you initialize the supplied parameter as currency type
 3. **BCH**
 4. **LTC**
 
-**blockIoExplorer** from **Block.io**
+## **blockIoExplorer** from **Block.io**
   
-This object requires you to initialize the supplied parameter as **api-key**.
+* This object requires you to initialize the supplied parameter as **api-key**.
   
 **etherscanIoExplorer** from **etherscan.io**
   
-This object requires that you provide two parameters for initialization, namely **network type** and **API-KEY**.
+* This object requires that you provide two parameters for initialization, namely **network type** and **API-KEY**.
   
  network type | desc 
  -| - 
@@ -79,9 +85,9 @@ This object requires that you provide two parameters for initialization, namely 
  goerli | Goerli 
  ewc | Ewc 
  
-**sochainExplorer** from **sochain.com**
+## **sochainExplorer** from **sochain.com**
 
-This object requires that you initialize the supplied parameter as currency networks type. It includes **BTC**,**LTC**, **DOGE**, **DASH**,**ZEC**, **BTCTEST**,**DASHTEST**,**ZECTEST**,**DOGETEST**,**LTCTEST**
+* This object requires that you initialize the supplied parameter as currency networks type. It includes **BTC**,**LTC**, **DOGE**, **DASH**,**ZEC**, **BTCTEST**,**DASHTEST**,**ZECTEST**,**DOGETEST**,**LTCTEST**
 
 Blockchain(Network) | Acronym | Info
 -| -| -
@@ -95,6 +101,35 @@ Dash (Test Net) | **DASHTEST** | The Dash test network. Currency has no value.
 Zcash (Test Net) | **ZECTEST** | The Zcash test network. Currency has no value.
 Dogecoin (Test Net) | **DOGETEST** | The Dogecoin test network. Currency has no value.
 Litecoin (Test Net) | **LTCTEST** | The Litecoin test network. Currency has no value.
+
+###**blockchairExplorer** from **blockchair.com**
+
+* This object requires that you initialize the supplied parameter as api_key. if you does not support api_key , Your request will be limited
+
+### support network
+
+Blockchain(Netework) | Acronym | Group | Support status
+-| -| -| -
+Bitcoin | BTC | Bitcoin-like | Full support
+Bitcoin cash | BCH | Bitcoin-like | Full support
+Ethereum | ETH | Ethereum-like | Full support
+Litecoin | LTC | Bitcoin-like | Full support
+Bitcoin SV | BSV | Bitcoin-like | Full support
+Dogecoin | DOGE | Bitcoin-like | Full support
+Dash | DASH | Bitcoin-like | Full support
+Ripple | XRP | Ripple-like | Alpha mode, possible compatibility-breaking changes
+Groestlcoin | GRS | Groestlcoin | Full support, community-backed till June 18th, 2020
+Stellar | XLM | Stellar-like | Alpha mode, possible compatibility-breaking changes
+Omni Layer | OMNI | Omni-like | Alpha support
+ERC-20 | ERC20 | ERC-20-like | Beta support
+
+## Test network support
+
+Blockchain(Network) | Acronym | Group | Support
+-| -| -| -
+Bitcoin Testnet | BTCTEST | Bitcoin-like | Full support
+
+
 
 ### Update remark
 ```markdown
