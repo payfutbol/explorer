@@ -1,13 +1,20 @@
 ## currencytx by explorer
 
-![Pay futbol](http://pay.futbol/static/img/logo.8bd463c.png)  
+![Pay futbol](https://user-images.githubusercontent.com/56773766/68991717-97a03200-089c-11ea-9165-c726c58f8179.png)  
 
 _Multiple third-party channel currencies are consolidated to allow simultaneous query of multiple currencies_
 
 [Github repository: https://github.com/payfutbol/explorer.git](https://github.com/payfutbol/explorer.git)  
 
 > Pay futbol blockchain explorer search tools
->> Current support [https://etherscan.io](http://etherscan.io) [https://block.io](https://block.io) [https://btc.com](https://btc.com) [https://sochain.com](https://sochain.com)
+
+logo | id | name | ver | doc | certified
+-| -| -| -| -| -|
+[<img alt="block.io" src="https://user-images.githubusercontent.com/56773766/68992021-8d803280-08a0-11ea-866f-84c2a07f9f80.png" width="114" height="49" align="center" />](https://block.io) |  block.io | [block.io](https://block.io) | 2 | [Api](https://block.io/api/) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
+[<img alt="btc.com" src="https://user-images.githubusercontent.com/56773766/68991746-f9609c00-089c-11ea-8560-350f075d8521.png" width=114 height=49 align=center>](https://btc.com) | btc.com | [btc.com](https://btc.com) | 3 | [Api](https://btc.com/api-doc) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
+[<img src="https://user-images.githubusercontent.com/56773766/68991693-74758280-089c-11ea-8eee-4cfe35313e2e.png" alt="SoChain" width=114 height=49 align=center />](https://sochain.com) | SoChain | [SoChain](https://sochain.com) | 2 | [Api](https://sochain.com/api#introduction) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
+
+
 
 ### INSTALL 
 ```vuejs
