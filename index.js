@@ -16,4 +16,9 @@ let etherscanIoExplorer = new model.etherscanIoExplorer('mainnet');
     etherscanIoExplorer.getSupply().then((res)=>{
       console.log(res);
     });
+let sochainExplorer = new model.sochainExplorer('coin');
+sochainExplorer.getInfo().then(res=>{
+  'use strict'
+  console.log(res);
+});
  **/

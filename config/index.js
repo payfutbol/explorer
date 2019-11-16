@@ -15,5 +15,8 @@ module.exports = {
     kovan: 'https://api-kovan.etherscan.io',
     goerli: 'https://api-goerli.etherscan.io',
     ewc: 'https://api-ewc.etherscan.com',
+  },
+  sochainURL: {
+    baseURL: "https://sochain.com/api/v2"
   }
 };
