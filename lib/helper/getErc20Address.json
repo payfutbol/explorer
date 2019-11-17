@@ -1,3 +1,85 @@
 {
-
+  "req": [
+    {
+      "name": "address",
+      "single": true,
+      "desc": "address is an Ethereum address (either an account or a contract, the address should start with 0x)"
+    },
+    {
+      "name": "contract",
+      "single": true,
+      "desc": "contract is the token contract address (should start with 0x)"
+    },
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "limit",
+          "type": "Number|String",
+          "desc": "100,100(transaction_limit,utxo_limit) | 100(limit)"
+        },
+        {
+          "name": "offset",
+          "type": "Number|String",
+          "desc": "100,100(transaction_offset,utxo_offset) | 100 (offset), Default for both offset is 0, and the maximum is 1000000."
+        },
+        {
+          "name": "transaction_details",
+          "type": "Boolean",
+          "desc": "returns detailed info on transactions instead of just hashes in the transactions array. Each element contains block_id, transaction_hash, time, and balance_change (shows how the transactions affected the balance of {:address}, i.e. it can be a negative value). At the moment, this option is available for the address endpoint only."
+        },
+        {
+          "name": "omni",
+          "type": "Boolean",
+          "desc": "(for bitcoin only; in alpha test mode) — shows information about Omni Layer tokens belonging to the address. At the moment, this option is available for the address endpoint only. The data is returned in the layer_2.omni array."
+        }
+      ]
+    }
+  ],
+  "outputs":{
+    "data": {
+      "0x3282791d6fd713f1e94f4bfd565eaa78b3a0599d": {
+        "address": {
+          "balance": "5000000000000000000",
+          "balance_approximate": 5,
+          "received": "5000000000000000000",
+          "received_approximate": 5,
+          "spent": "0",
+          "spent_approximate": 0,
+          "receiving_transaction_count": 1,
+          "spending_transaction_count": 0,
+          "transaction_count": 1,
+          "first_seen_receiving": "2017-11-26 23:17:02",
+          "last_seen_receiving": "2017-11-26 23:17:02",
+          "first_seen_spending": null,
+          "last_seen_spending": null
+        },
+        "transactions": [
+          {
+            "block_id": 4628318,
+            "id": 17166097,
+            "transaction_hash": "0xd3aeac286c429f581f056388e523726e7b42caeba1d6a8df591ea2ec30daad48",
+            "time": "2017-11-26 23:17:02",
+            "token_address": "0x68e14bb5a45b9681327e16e528084b9d962c1a39",
+            "token_name": "en",
+            "token_symbol": "CAT",
+            "token_decimals": 18,
+            "sender": "0x9f89388141c632c4c6f36d1060d5f50604ee3abc",
+            "recipient": "0x3282791d6fd713f1e94f4bfd565eaa78b3a0599d",
+            "value": "5000000000000000000",
+            "value_approximate": 5
+          }
+        ]
+      }
+    },
+    "context": {
+      "code": 200,
+      "limit": 100,
+      "offset": 0,
+      "results": 1,
+      "state": 8805315,
+      "state_layer_2": 8805304
+    }
+  },
+  "desc": "ERC-20 token holder info"
 }

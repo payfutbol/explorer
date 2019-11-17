@@ -1,3 +1,146 @@
 {
-
+  "req": [
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "q",
+          "type": "String",
+          "default": "desc",
+          "desc": "like SQL where",
+          "condition": {
+            "field": {
+              "mode": "id(desc)[,output_total_usd(asc)]",
+              "sql": "id desc,output_total_usd asc",
+              "max": 2
+            }
+          }
+        },
+        {
+          "name": "s",
+          "type": "String",
+          "desc": "like SQL order by",
+          "condition": {
+            "equals": {
+              "mode": "id(0)",
+              "sql" : "id=0"
+            },
+            "left..": {
+              "mode": "id(1..)",
+              "sql": "id >=1"
+            },
+            "left...": {
+              "mode": "id(1...)",
+              "sql": "id > 1"
+            },
+            "..right": {
+              "mode": "id(..1)",
+              "sql": "id <=1"
+            },
+            "...right": {
+              "mode": "id(...1)",
+              "sql": "id < 1"
+            },
+            "left..right": {
+              "mode": "id(1..3)",
+              "sql": "id >=1 AND id <=3"
+            },
+            "left...right": {
+              "mode": "id(1...3)",
+              "sql": "id> 1 AND id < 3"
+            },
+            "~like": {
+              "mode": "coinbase_data_bin(~hello)",
+              "sql": "coinbase_data_bin LIKE '%hello%'"
+            },
+            "^like": {
+              "mode": "coinbase_data_hex(^00)",
+              "sql": "coinbase_data_hex LIKE '00%'"
+            },
+            "time": {
+              "mode": "time(YYYY-MM-DD)",
+              "sql": "timestamp format"
+            },
+            "NOT": {
+              "mode": "not,id(1..)",
+              "sql": "id < 1"
+            },
+            "OR": {
+              "mode": "id(1),or,id(2)",
+              "sql": "id=1 OR id=2"
+            },
+            "desc": "mutiple condition need use ',' join"
+          }
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "desc": "like SQL limit"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "desc": "like SQL offset"
+        },
+        {
+          "name": "a",
+          "type": "String",
+          "desc": "support group by、count、max、sum、f、price， default limit 10000, you can export TSV or CSV data(It's need Premium API plan). "
+        },
+        {
+          "name": "aq",
+          "type": "String",
+          "desc": "{:i}:{:j} i=q:j=a ，Filter and delete data in corresponding location"
+        },
+        {
+          "name": "explode",
+          "type": "String",
+          "desc": "Only support TSV OR CSV format."
+        }
+      ],
+      "sample": [
+        "?q=time(2019-01),guessed_miner(AntPool)&s=size(desc)&limit=1",
+        "q=time(2019-01-01..2019-01-31)&a=guessed_miner,count()&s=count()(desc)"
+      ]
+    }
+  ],
+  "outputs":{
+    "data": [
+      {
+        "block_id": 600573,
+        "id": 467508697,
+        "hash": "ee13104d4331cad2fff5ab6cd249a9fec940d64df442a6de5f51ea63c34ef8ff",
+        "date": "2019-10-22",
+        "time": "2019-10-22 19:09:34",
+        "size": 250,
+        "weight": 672,
+        "version": 1,
+        "lock_time": 0,
+        "is_coinbase": false,
+        "has_witness": true,
+        "input_count": 1,
+        "output_count": 2,
+        "input_total": 29340442,
+        "input_total_usd": 2408.9,
+        "output_total": 29340274,
+        "output_total_usd": 2408.89,
+        "fee": 168,
+        "fee_usd": 0.0137931,
+        "fee_per_kb": 672,
+        "fee_per_kb_usd": 0.0551723,
+        "fee_per_kwu": 250,
+        "fee_per_kwu_usd": 0.0205254,
+        "cdd_total": 29.154456198211
+      }
+    ],
+    "context": {
+      "code": 200,
+      "limit": 1,
+      "offset": 0,
+      "rows": 1,
+      "total_rows": 467508698,
+      "state": 600573
+    }
+  },
+  "desc": "(for blockchain transactions)"
 }

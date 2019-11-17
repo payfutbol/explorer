@@ -1,3 +1,43 @@
 {
+  "req": [
 
+  ],
+  "outputs":{
+    "data":{
+      "bitcoin":{
+        "data":{
+          "count":8987,
+          "countries":{
+            "US":2832
+          },
+          "versions":{
+            "\/Satoshi:0.18.0\/":2882
+          },
+          "heights":{
+            "604175":6485
+          }
+        }
+      },
+      "context":{
+        "code":200
+      },
+      "source":"D",
+      "time":0.1021111011505127,
+      "cache":{
+        "live":false,
+        "duration":300,
+        "since":"2019-11-17 09:48:32",
+        "until":"2019-11-17 09:53:32",
+        "time":2.86102294921875e-6
+      },
+      "api":{
+        "version":"2.0.39a",
+        "last_major_update":"2019-07-19 18:07:19",
+        "next_major_update":null,
+        "tested_features":"omni-v.a1,whc-v.a1,aggregate-v.b5,xpub-v.b5,ripple-v.a1,ethgraph-v.a1,erc_20-v.a1",
+        "documentation":"https:\/\/github.com\/Blockchair\/Blockchair.Support\/blob\/master\/API.md",
+        "notice":"Beginning July 19th, 2019 all applications using Blockchair API on a constant basis should apply for an API key (mailto:info@blockchair.com)"
+      }
+    }
+  }
 }

@@ -1,3 +1,30 @@
 {
-
+  "req": [
+    {
+      "name": "contract",
+      "single": true,
+      "desc": "contract is the token contract address (starting with 0x)"
+    }
+  ],
+  "outputs":{
+    "data": {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "time": "2017-11-28 00:41:21",
+      "creating_block_id": 4634748,
+      "creating_transaction_hash": "0x2f1c5c2b44f771e942a8506148e256f94f1a464babc938ae0690c6e34cd79190",
+      "transactions": 8898558,
+      "transactions_24h": 95437,
+      "volume_24h_approximate": 507067165.4109063,
+      "volume_24h": "507067165410910"
+    },
+    "context": {
+      "code": 200,
+      "results": 1,
+      "state": 8766954,
+      "state_layer_2": 8766944
+    }
+  },
+  "desc": "Allows to retrieve the some basic information on an ERC-20 token. Note that this endpoint is in the Beta stage."
 }

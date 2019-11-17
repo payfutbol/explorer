@@ -1,3 +1,61 @@
 {
-
+  "req": [
+    {
+      "name": "hash",
+      "single": true,
+      "desc": "support single wallet address query"
+    },
+    {
+      "name": "omni",
+      "type": "Boolean",
+      "default": "true",
+      "desc": "(for bitcoin only; in alpha test mode) — shows information about Omni Layer token transfers in this transaction"
+    }
+  ],
+  "outputs":{
+    "data": {
+      "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa": {
+        "address": {
+          "type": "pubkey",
+          "script_hex": "4104678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5fac",
+          "balance": 6812392291,
+          "balance_usd": 508913.63494609314,
+          "received": 6812392291,
+          "received_usd": 15293.3019,
+          "spent": 0,
+          "spent_usd": 0,
+          "output_count": 1820,
+          "unspent_output_count": 1820,
+          "first_seen_receiving": "2009-01-03 18:15:05",
+          "last_seen_receiving": "2019-10-24 18:47:23",
+          "first_seen_spending": null,
+          "last_seen_spending": null,
+          "transaction_count": 1820
+        },
+        "transactions": [
+          {
+            "block_id": 600890,
+            "hash": "4db4d68b13bf667ad9a44f4222bad2239de318fa75555ef966e84315056374b5",
+            "time": "2019-10-24 18:47:23",
+            "balance_change": 267582
+          }
+        ],
+        "utxo": [
+          {
+            "block_id": 600890,
+            "transaction_hash": "4db4d68b13bf667ad9a44f4222bad2239de318fa75555ef966e84315056374b5",
+            "index": 1,
+            "value": 267582
+          }
+        ]
+      }
+    },
+    "context": {
+      "code": 200,
+      "limit": "1,1",
+      "offset": "1,1",
+      "results": 1,
+      "state": 600897
+    }
+  }
 }

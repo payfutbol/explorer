@@ -1,3 +1,44 @@
 {
-
+  "req": [
+    {
+      "name": "blockId",
+      "single": true,
+      "desc": "block Height"
+    },
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "limit",
+          "type": "Number|String",
+          "desc": "100,100(transaction_limit,utxo_limit) | 100(limit)"
+        },
+        {
+          "name": "offset",
+          "type": "Number|String",
+          "desc": "100,100(transaction_offset,utxo_offset) | 100 (offset), Default for both offset is 0, and the maximum is 1000000."
+        },
+        {
+          "name": "transaction_details",
+          "type": "Boolean",
+          "desc": "returns detailed info on transactions instead of just hashes in the transactions array. Each element contains block_id, transaction_hash, time, and balance_change (shows how the transactions affected the balance of {:address}, i.e. it can be a negative value). At the moment, this option is available for the address endpoint only."
+        },
+        {
+          "name": "omni",
+          "type": "Boolean",
+          "desc": "(for bitcoin only; in alpha test mode) — shows information about Omni Layer tokens belonging to the address. At the moment, this option is available for the address endpoint only. The data is returned in the layer_2.omni array."
+        }
+      ]
+    }
+  ],
+  "outputs":{
+    "data": {
+      "1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc": 5000000000,
+      "1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3": 1000000000,
+      "12cbQLTFMXRnSzktFkuoG3eHoMeFtpTu3S": -1000000000
+    },
+    "context": {
+      "results": 3
+    }
+  }
 }

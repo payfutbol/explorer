@@ -1,3 +1,9 @@
 {
-
+  "req": [
+    {
+      "name": "symbol",
+      "desc": "you can support symbol String. e.g. 'btc', 'bch', 'ltc', 'bsv', 'doge', 'dash','eth', 'erc20', 'xrp', 'xlm', 'omni', 'grs'"
+    }
+  ],
+  "outputs":[]
 }

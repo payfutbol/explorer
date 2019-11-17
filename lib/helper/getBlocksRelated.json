@@ -1,1 +1,113 @@
-{}
+{
+  "req": [
+    {
+      "name": "hashOrHeight",
+      "single": true,
+      "desc": "block height or block hash"
+    },
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "limit",
+          "type": "Number|String",
+          "desc": "100,100(transaction_limit,utxo_limit) | 100(limit)"
+        },
+        {
+          "name": "offset",
+          "type": "Number|String",
+          "desc": "100,100(transaction_offset,utxo_offset) | 100 (offset), Default for both offset is 0, and the maximum is 1000000."
+        },
+        {
+          "name": "transaction_details",
+          "type": "Boolean",
+          "desc": "returns detailed info on transactions instead of just hashes in the transactions array. Each element contains block_id, transaction_hash, time, and balance_change (shows how the transactions affected the balance of {:address}, i.e. it can be a negative value). At the moment, this option is available for the address endpoint only."
+        },
+        {
+          "name": "omni",
+          "type": "Boolean",
+          "desc": "(for bitcoin only; in alpha test mode) — shows information about Omni Layer tokens belonging to the address. At the moment, this option is available for the address endpoint only. The data is returned in the layer_2.omni array."
+        }
+      ]
+    }
+  ],
+  "outputs":{
+    "data":{
+      "2345678":{
+        "block":{
+          "id":2345678,
+          "hash":"0xda214d1b1d458e7ae0e626b69a52a59d19762c51a53ff64813c4d31256282fdf",
+          "date":"2016-09-29",
+          "time":"2016-09-29 01:39:41",
+          "size":1109,
+          "miner":"0x4bb96091ee9d802ed039c4d1a5f6216f90f81b01",
+          "extra_data_hex":"657468706f6f6c2e6f7267202845553129",
+          "difficulty":81923183857781,
+          "gas_used":105000,
+          "gas_limit":1500000,
+          "logs_bloom":"00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "mix_hash":"f5b95f5b79cd8425db7f04d200d78d16c104c28d078d0b653ae1c24f31759662",
+          "nonce":"681508643254209570",
+          "receipts_root":"51a6952987f2c7ebf74fc1a4f644265aebb660b1d86a12c0f6e3001a2866331f",
+          "sha3_uncles":"1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+          "state_root":"4f6b1af13d99c75e0d644b226d57767a0d2f22921c529dfe3455bc63154b01e5",
+          "total_difficulty":"66939257372572274863",
+          "transactions_root":"dde4d2ce7556effca10c868f500f0e47fb09b5cb4a003d781080f1a06e582352",
+          "uncle_count":0,
+          "transaction_count":5,
+          "synthetic_transaction_count":1,
+          "call_count":5,
+          "synthetic_call_count":1,
+          "value_total":"17966223975031638280",
+          "value_total_usd":238.950782294711,
+          "internal_value_total":"17963073975031638280",
+          "internal_value_total_usd":238.90888729411,
+          "generation":"5000000000000000000",
+          "generation_usd":66.5000009536743,
+          "uncle_generation":"0",
+          "uncle_generation_usd":0,
+          "fee_total":"3150000000000000",
+          "fee_total_usd":0.0418950006008148,
+          "reward":"5003150000000000000",
+          "reward_usd":66.5418959542751
+        },
+        "uncles":[],
+        "transactions":[
+          "0x4052841e7ff856e08e73245ed1fab5f41021d4bfe83202b6581870cb559b44c4",
+          "0xa1ed63865958a1b3abc8e259dc980bd76dd3f989f14577cce18b7e265cf9528e",
+          "0x1d6713c7e6be2a45e6b3d2a7dfc1af96443cfb65d4b51cd41ac21b7b840e77e0",
+          "0xffbcdcbef6c5341dd60a9b7f182b61cf0c468d63defcc2fa8c56e292d4bfc8d6",
+          "0x0c79e3ae36150eb36d6a631cc8d6250db4b9b832a82ac58ea356357f5987debe"
+        ],
+        "synthetic_transactions":[
+          2345678000005
+        ]
+      }
+    },
+    "context":{
+      "code":200,
+      "source":"D",
+      "time":1.8853929042816162,
+      "limit":100,
+      "offset":0,
+      "results":1,
+      "state":8949181,
+      "state_layer_2":8949168,
+      "cache":{
+        "live":false,
+        "duration":60,
+        "since":"2019-11-17 07:24:46",
+        "until":"2019-11-17 07:25:46",
+        "time":3.814697265625e-6},
+      "api":{
+        "version":"2.0.39a",
+        "last_major_update":"2019-07-19 18:07:19",
+        "next_major_update":null,
+        "tested_features":"omni-v.a1,whc-v.a1,aggregate-v.b5,xpub-v.b5,ripple-v.a1,ethgraph-v.a1,erc_20-v.a1",
+        "documentation":"https:\/\/github.com\/Blockchair\/Blockchair.Support\/blob\/master\/API.md",
+        "notice":"Beginning July 19th, 2019 all applications using Blockchair API on a constant basis should apply for an API key (mailto:info@blockchair.com)"
+      }
+    }
+  },
+  "desc": "just suport btc_chain and eth_chain"
+}

@@ -1,3 +1,85 @@
 {
-
-}
+  "req": [
+    {
+      "name": "hashOrHeight",
+      "single": true,
+      "desc": "support block hash or block height"
+    },
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "limit",
+          "type": "Number|String",
+          "desc": "100,100(transaction_limit,utxo_limit) | 100(limit)"
+        },
+        {
+          "name": "offset",
+          "type": "Number|String",
+          "desc": "100,100(transaction_offset,utxo_offset) | 100 (offset), Default for both offset is 0, and the maximum is 1000000."
+        },
+        {
+          "name": "transaction_details",
+          "type": "Boolean",
+          "desc": "returns detailed info on transactions instead of just hashes in the transactions array. Each element contains block_id, transaction_hash, time, and balance_change (shows how the transactions affected the balance of {:address}, i.e. it can be a negative value). At the moment, this option is available for the address endpoint only."
+        },
+        {
+          "name": "omni",
+          "type": "Boolean",
+          "desc": "(for bitcoin only; in alpha test mode) — shows information about Omni Layer tokens belonging to the address. At the moment, this option is available for the address endpoint only. The data is returned in the layer_2.omni array."
+        }
+      ]
+    }
+  ],
+  "outputs":{
+    "data": {
+      "0": {
+        "block": {
+          "id": 0,
+          "hash": "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+          "date": "2009-01-03",
+          "time": "2009-01-03 18:15:05",
+          "median_time": "2009-01-03 18:15:05",
+          "size": 285,
+          "version": 1,
+          "version_hex": "1",
+          "version_bits": "000000000000000000000000000001",
+          "merkle_root": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+          "nonce": 2083236893,
+          "bits": 486604799,
+          "difficulty": 1,
+          "chainwork": "0000000000000000000000000000000000000000000000000000000100010001",
+          "coinbase_data_hex": "04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73",
+          "transaction_count": 1,
+          "input_count": 1,
+          "output_count": 1,
+          "input_total": 0,
+          "input_total_usd": 0,
+          "output_total": 5000000000,
+          "output_total_usd": 0,
+          "fee_total": 0,
+          "fee_total_usd": 0,
+          "fee_per_kb": 0,
+          "fee_per_kb_usd": 0,
+          "cdd_total": 0,
+          "generation": 5000000000,
+          "generation_usd": 0,
+          "reward": 5000000000,
+          "reward_usd": 0,
+          "guessed_miner": "Unknown"
+        },
+        "transactions": [
+          "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+        ]
+      }
+    },
+      "context": {
+        "code": 200,
+        "limit": 100,
+        "offset": 0,
+        "results": 1,
+        "state": 555555
+      }
+    },
+    "desc": "support btc_chain or eth_chain"
+  }

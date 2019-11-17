@@ -1,3 +1,305 @@
 {
-
+  "req": [
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "q",
+          "type": "String",
+          "default": "desc",
+          "desc": "like SQL where",
+          "condition": {
+            "field": {
+              "mode": "id(desc)[,output_total_usd(asc)]",
+              "sql": "id desc,output_total_usd asc",
+              "max": 2
+            }
+          }
+        },
+        {
+          "name": "s",
+          "type": "String",
+          "desc": "like SQL order by",
+          "condition": {
+            "equals": {
+              "mode": "id(0)",
+              "sql" : "id=0"
+            },
+            "left..": {
+              "mode": "id(1..)",
+              "sql": "id >=1"
+            },
+            "left...": {
+              "mode": "id(1...)",
+              "sql": "id > 1"
+            },
+            "..right": {
+              "mode": "id(..1)",
+              "sql": "id <=1"
+            },
+            "...right": {
+              "mode": "id(...1)",
+              "sql": "id < 1"
+            },
+            "left..right": {
+              "mode": "id(1..3)",
+              "sql": "id >=1 AND id <=3"
+            },
+            "left...right": {
+              "mode": "id(1...3)",
+              "sql": "id> 1 AND id < 3"
+            },
+            "~like": {
+              "mode": "coinbase_data_bin(~hello)",
+              "sql": "coinbase_data_bin LIKE '%hello%'"
+            },
+            "^like": {
+              "mode": "coinbase_data_hex(^00)",
+              "sql": "coinbase_data_hex LIKE '00%'"
+            },
+            "time": {
+              "mode": "time(YYYY-MM-DD)",
+              "sql": "timestamp format"
+            },
+            "NOT": {
+              "mode": "not,id(1..)",
+              "sql": "id < 1"
+            },
+            "OR": {
+              "mode": "id(1),or,id(2)",
+              "sql": "id=1 OR id=2"
+            },
+            "desc": "mutiple condition need use ',' join"
+          }
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "desc": "like SQL limit"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "desc": "like SQL offset"
+        },
+        {
+          "name": "a",
+          "type": "String",
+          "desc": "support group by、count、max、sum、f、price， default limit 10000, you can export TSV or CSV data(It's need Premium API plan). "
+        },
+        {
+          "name": "aq",
+          "type": "String",
+          "desc": "{:i}:{:j} i=q:j=a ，Filter and delete data in corresponding location"
+        },
+        {
+          "name": "explode",
+          "type": "String",
+          "desc": "Only support TSV OR CSV format."
+        }
+      ],
+      "sample": [
+        "?q=time(2019-01),guessed_miner(AntPool)&s=size(desc)&limit=1",
+        "q=time(2019-01-01..2019-01-31)&a=guessed_miner,count()&s=count()(desc)"
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "name": "block_id",
+      "type": "Number",
+      "desc": "Block id containing a call",
+      "q": "*",
+      "s": "+",
+      "a": "+",
+      "c": ""
+    },
+    {
+      "name": "transaction_id",
+      "type": "Number",
+      "desc": "Transaction id containing the call",
+      "q": "*",
+      "s": "+",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "transaction_hash†",
+      "type": "string 0x[0-9a-f]{64}",
+      "desc": "Transaction hash (with 0x) containing the call",
+      "q": "=",
+      "s": "",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "desc": "Call index within the transaction (tree-like, e.g., \"0.8.1\")",
+      "q": "=",
+      "s": "+",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "depth",
+      "type": "number",
+      "desc": "Call depth within the call tree (starting at 0)",
+      "q": "*",
+      "s": "+",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "date",
+      "type": "string YYYY-MM-DD",
+      "desc": "Date of the block that contains the call (UTC)",
+      "q": "",
+      "s": "",
+      "a": "⌘",
+      "c": ""
+    },
+    {
+      "name": "time",
+      "type": "string YYYY-MM-DD HH:ii:ss",
+      "desc": "Time of the block that contains the call (UTC)",
+      "q": "⌘",
+      "s": "+",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "failed",
+      "type": "bool",
+      "desc": "Failed call or not",
+      "q": "=",
+      "s": "",
+      "a": "+",
+      "c": ""
+    },
+    {
+      "name": "fail_reason",
+      "type": "string .* or null",
+      "desc": "If failed, then the failure description, if not, then null",
+      "q": "~",
+      "a": "",
+      "s": "+",
+      "c": ""
+    },
+    {
+      "name": "type",
+      "type": "string (enum)",
+      "desc": "The call type, one of the following values: call, delegatecall, staticcall, callcode, selfdestruct, create, synthetic_coinbase, create2",
+      "q": "=",
+      "s": "+",
+      "a": "+",
+      "c": ""
+    },
+    {
+      "name": "sender †	",
+      "type": "string 0x[0-9a-f]{40}",
+      "desc": "Sender's address (with 0x)",
+      "q": "=",
+      "s": "",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "recipient",
+      "type": "string 0x[0-9a-f]{40}",
+      "desc": "Recipient's address (with 0x)",
+      "q": "=",
+      "s": "",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "child_call_count",
+      "type": "int",
+      "desc": "Number of child calls",
+      "q": "*",
+      "s": "+",
+      "a": "",
+      "c": "+"
+    },
+    {
+      "name": "value",
+      "type": "numeric string",
+      "desc": "Call value in wei, hereinafter numeric string - is a numeric string passed as a string, because wei-values do not fit into uint64",
+      "q": "* ≈",
+      "s": "+",
+      "a": "",
+      "c": "+"
+    },
+    {
+      "name": "value_usd",
+      "type": "float",
+      "desc": "Call value in USD",
+      "q": "*",
+      "s": "+",
+      "a": "",
+      "c": "+"
+    },
+    {
+      "name": "transferred",
+      "type": "bool",
+      "desc": "Has ether been transferred? (false if failed, or if the type of transaction does not change the state, e.g., staticcall",
+      "q": "=",
+      "s": "",
+      "a": "+",
+      "c": ""
+    },
+    {
+      "name": "input_hex †",
+      "type": "string [0-9a-f]*",
+      "desc": "Input call data",
+      "q": "",
+      "s": "",
+      "a": "",
+      "c": ""
+    },
+    {
+      "name": "output_hex †",
+      "type": "string [0-9a-f]*",
+      "desc": "Output call data",
+      "q": "",
+      "s": "",
+      "a": "",
+      "c": ""
+    }
+  ],
+  "outputs":{
+    "data": [
+      {
+        "block_id": 8792132,
+        "transaction_id": 8792132000050,
+        "transaction_hash": "0x9e3a13bfc5313245de7142b7ec13b80123188d9ae4cce797a44b9b426864d1ca",
+        "index": "0",
+        "depth": 0,
+        "date": "2019-10-22",
+        "time": "2019-10-22 19:30:03",
+        "failed": false,
+        "fail_reason": null,
+        "type": "call",
+        "sender": "0xe475e906b74806c333fbb1b087e523496d8c4cb7",
+        "recipient": "0x3143ec5a285adfb248c9e4de934ee735d4b7d734",
+        "child_call_count": 0,
+        "value": "0",
+        "value_usd": 0,
+        "transferred": true,
+        "input_hex": "a9059cbb00000000000000000000000023ea8008420c4355570f9915b5fe39dc278540d3000000000000000000000000000000000000000000000000000000003b9aca00",
+        "output_hex": "0000000000000000000000000000000000000000000000000000000000000001"
+      }
+    ],
+    "context": {
+      "code": 200,
+      "limit": 1,
+      "offset": 0,
+      "rows": 1,
+      "total_rows": 1422927649,
+      "state": 8792138,
+      "state_layer_2": 8792127
+    }
+  },
+  "desc": "just suport eth_chain ?q=not,type(synthetic_coinbase)&limit=1"
 }

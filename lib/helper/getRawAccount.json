@@ -1,3 +1,119 @@
 {
-
+  "req": [
+    {
+      "name": "address",
+      "single": true,
+      "desc": "support single wallet address query"
+    },
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "transactions",
+          "type": "Boolean",
+          "default": true,
+          "desc": "returns information about latest account transactions"
+        },
+        {
+          "name": "operations",
+          "type": "Boolean",
+          "default": true,
+          "desc": "returns information about latest account operations"
+        },
+        {
+          "name": "payments",
+          "type": "Boolean",
+          "default": true,
+          "desc": "returns information about latest account payments"
+        },
+        {
+          "name": "effects",
+          "type": "Boolean",
+          "default": true,
+          "desc": "returns information about latest account effects"
+        },
+        {
+          "name": "offers",
+          "type": "Boolean",
+          "default": true,
+          "desc": "returns information about latest account offers"
+        },
+        {
+          "name": "trades",
+          "type": "Boolean",
+          "default": true,
+          "desc": "returns information about latest account trades"
+        },
+        {
+          "name": "account",
+          "type": "Boolean",
+          "default": false,
+          "desc": "doesn't query account data (true by default if this option is not applied)"
+        }
+      ]
+    }
+  ],
+  "outputs":{
+    "data": {
+      "GBOLDCYKDFVCG2UG3OLPY6GMZUAQAX445UM3RCXGBVW37RMQEYXZ4HD7": {
+        "account": {
+          "id": "GBOLDCYKDFVCG2UG3OLPY6GMZUAQAX445UM3RCXGBVW37RMQEYXZ4HD7",
+          "account_id": "GBOLDCYKDFVCG2UG3OLPY6GMZUAQAX445UM3RCXGBVW37RMQEYXZ4HD7",
+          "sequence": "113240003919741217",
+          "subentry_count": 16,
+          "inflation_destination": "GDCHDRSDOBRMSUDKRE2C4U4KDLNEATJPIHHR2ORFL5BSD56G4DQXL4VW",
+          "home_domain": "lobstr.co",
+          "last_modified_ledger": 26574812,
+          "thresholds": {
+            "low_threshold": 0,
+            "med_threshold": 0,
+            "high_threshold": 0
+          },
+          "flags": {
+            "auth_required": false,
+            "auth_revocable": false,
+            "auth_immutable": false
+          },
+          "balances": [
+            {
+              "balance": "99.9999989",
+              "limit": "922337203685.4775807",
+              "buying_liabilities": "0.0000000",
+              "selling_liabilities": "0.0000000",
+              "last_modified_ledger": 26369752,
+              "is_authorized": true,
+              "asset_type": "credit_alphanum4",
+              "asset_code": "MOBI",
+              "asset_issuer": "GA6HCMBLTZS5VYYBCATRBRZ3BZJMAFUDKYYF6AH6MVCMGWMRDNSWJPIH"
+            },
+            {
+              "balance": "350.2871051",
+              "buying_liabilities": "105.0000000",
+              "selling_liabilities": "341.1000000",
+              "asset_type": "native"
+            }
+          ],
+          "signers": [
+            {
+              "weight": 1,
+              "key": "GBOLDCYKDFVCG2UG3OLPY6GMZUAQAX445UM3RCXGBVW37RMQEYXZ4HD7",
+              "type": "ed25519_public_key"
+            }
+          ],
+          "data": []
+        },
+        "transactions": null,
+        "operations": null,
+        "payments": null,
+        "effects": null,
+        "offers": null,
+        "trades": null
+      }
+    },
+    "context": {
+      "code": 200,
+      "results": 1,
+      "state": 26559101
+    }
+  }
 }

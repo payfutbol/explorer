@@ -1,1 +1,63 @@
-{}
+{
+  "req": [
+    {
+      "name": "state",
+      "type": "Boolean",
+      "default": true,
+      "desc": "If you require data on just one blockchain, state 1 all, 0  chain"
+    }
+  ],
+  "outputs":{
+    "data": {
+      "bitcoin": {
+        "data": {
+          "blocks": 599952
+        }
+      },
+      "bitcoin-cash": {
+        "data": {
+          "blocks": 605134
+        }
+      },
+      "bitcoin-sv": {
+        "data": {
+          "blocks": 604886
+        }
+      },
+      "ethereum": {
+        "data": {
+          "blocks": 8766052
+        }
+      },
+      "litecoin": {
+        "data": {
+          "blocks": 1721519
+        }
+      },
+      "dogecoin": {
+        "data": {
+          "blocks": 2941267
+        }
+      },
+      "dash": {
+        "data": {
+          "blocks": 1156197
+        }
+      },
+      "ripple": {
+        "data": {
+          "ledgers": 50795982
+        }
+      },
+      "groestlcoin": {
+        "data": {
+          "blocks": 2801282
+        }
+      }
+    },
+    "context": {
+      "code": 200
+    }
+  },
+  "desc": "Allows to retrieve the most important stats on all blockchains we support via just one API request."
+}

@@ -1,3 +1,17 @@
 {
-
+  "req": [
+    {
+      "name": "data",
+      "desc": "data should contain data parameter with raw transaction represented in hex (for Ethereum it should start with 0x)"
+    }
+  ],
+  "outputs":{
+    "data": {
+      "transaction_hash": "0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098"
+    },
+    "context": {
+      "code": 200
+    }
+  },
+  "desc": "Broadcast a transaction to the network"
 }

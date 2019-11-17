@@ -1,3 +1,127 @@
 {
-
+  "req": [
+    {
+      "name": "path_query",
+      "req": [
+        {
+          "name": "q",
+          "type": "String",
+          "default": "desc",
+          "desc": "like SQL where",
+          "condition": {
+            "field": {
+              "mode": "id(desc)[,output_total_usd(asc)]",
+              "sql": "id desc,output_total_usd asc",
+              "max": 2
+            }
+          }
+        },
+        {
+          "name": "s",
+          "type": "String",
+          "desc": "like SQL order by",
+          "condition": {
+            "equals": {
+              "mode": "id(0)",
+              "sql" : "id=0"
+            },
+            "left..": {
+              "mode": "id(1..)",
+              "sql": "id >=1"
+            },
+            "left...": {
+              "mode": "id(1...)",
+              "sql": "id > 1"
+            },
+            "..right": {
+              "mode": "id(..1)",
+              "sql": "id <=1"
+            },
+            "...right": {
+              "mode": "id(...1)",
+              "sql": "id < 1"
+            },
+            "left..right": {
+              "mode": "id(1..3)",
+              "sql": "id >=1 AND id <=3"
+            },
+            "left...right": {
+              "mode": "id(1...3)",
+              "sql": "id> 1 AND id < 3"
+            },
+            "~like": {
+              "mode": "coinbase_data_bin(~hello)",
+              "sql": "coinbase_data_bin LIKE '%hello%'"
+            },
+            "^like": {
+              "mode": "coinbase_data_hex(^00)",
+              "sql": "coinbase_data_hex LIKE '00%'"
+            },
+            "time": {
+              "mode": "time(YYYY-MM-DD)",
+              "sql": "timestamp format"
+            },
+            "NOT": {
+              "mode": "not,id(1..)",
+              "sql": "id < 1"
+            },
+            "OR": {
+              "mode": "id(1),or,id(2)",
+              "sql": "id=1 OR id=2"
+            },
+            "desc": "mutiple condition need use ',' join"
+          }
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "desc": "like SQL limit"
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "desc": "like SQL offset"
+        },
+        {
+          "name": "a",
+          "type": "String",
+          "desc": "support group by、count、max、sum、f、price， default limit 10000, you can export TSV or CSV data(It's need Premium API plan). "
+        },
+        {
+          "name": "aq",
+          "type": "String",
+          "desc": "{:i}:{:j} i=q:j=a ，Filter and delete data in corresponding location"
+        },
+        {
+          "name": "explode",
+          "type": "String",
+          "desc": "Only support TSV OR CSV format."
+        }
+      ]
+    }
+  ],
+  "outputs":{
+    "data": [
+      {
+        "address": "0x9b460d404be254d7b2ba89336a8a41807bb1562b",
+        "id": 121500,
+        "date": "2019-10-22",
+        "time": "2019-10-22 19:21:11",
+        "name": "UGB Token",
+        "symbol": "UGB",
+        "decimals": 18,
+        "creating_block_id": 8792093,
+        "creating_transaction_hash": "0x58e132a937c3bd60f1d113ecb14db59fd5229ae312a2afdf8f1b365bf8620e5e"
+      }
+    ],
+    "context": {
+      "code": 200,
+      "limit": 1,
+      "offset": 0,
+      "rows": 1,
+      "total_rows": 121500,
+      "state": 8792147,
+      "state_layer_2": 8792137
+    }
+  }
 }

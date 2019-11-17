@@ -1,3 +1,134 @@
 {
-
+  "req": [
+    {
+      "name": "q",
+      "type": "String",
+      "default": "desc",
+      "desc": "like SQL where",
+      "condition": {
+        "field": {
+          "mode": "id(desc)[,output_total_usd(asc)]",
+          "sql": "id desc,output_total_usd asc",
+          "max": 2
+        }
+      }
+    },
+    {
+      "name": "s",
+      "type": "String",
+      "desc": "like SQL order by",
+      "condition": {
+        "equals": {
+          "mode": "id(0)",
+          "sql" : "id=0"
+        },
+        "left..": {
+          "mode": "id(1..)",
+          "sql": "id >=1"
+        },
+        "left...": {
+          "mode": "id(1...)",
+          "sql": "id > 1"
+        },
+        "..right": {
+          "mode": "id(..1)",
+          "sql": "id <=1"
+        },
+        "...right": {
+          "mode": "id(...1)",
+          "sql": "id < 1"
+        },
+        "left..right": {
+          "mode": "id(1..3)",
+          "sql": "id >=1 AND id <=3"
+        },
+        "left...right": {
+          "mode": "id(1...3)",
+          "sql": "id> 1 AND id < 3"
+        },
+        "~like": {
+          "mode": "coinbase_data_bin(~hello)",
+          "sql": "coinbase_data_bin LIKE '%hello%'"
+        },
+        "^like": {
+          "mode": "coinbase_data_hex(^00)",
+          "sql": "coinbase_data_hex LIKE '00%'"
+        },
+        "time": {
+          "mode": "time(YYYY-MM-DD)",
+          "sql": "timestamp format"
+        },
+        "NOT": {
+          "mode": "not,id(1..)",
+          "sql": "id < 1"
+        },
+        "OR": {
+          "mode": "id(1),or,id(2)",
+          "sql": "id=1 OR id=2"
+        },
+        "desc": "mutiple condition need use ',' join"
+      }
+    },
+    {
+      "name": "limit",
+      "type": "Number",
+      "desc": "like SQL limit"
+    },
+    {
+      "name": "offset",
+      "type": "Number",
+      "desc": "like SQL offset"
+    },
+    {
+      "name": "a",
+      "type": "String",
+      "desc": "support group by、count、max、sum、f、price， default limit 10000, you can export TSV or CSV data(It's need Premium API plan). "
+    },
+    {
+      "name": "aq",
+      "type": "String",
+      "desc": "{:i}:{:j} i=q:j=a ，Filter and delete data in corresponding location"
+    },
+    {
+      "name": "explode",
+      "type": "String",
+      "desc": "Only support TSV OR CSV format."
+    }
+  ],
+  "outputs":{
+    "data": [
+      {
+        "parent_block_id": 8792054,
+        "index": 0,
+        "id": 8792051,
+        "hash": "0x41a4d3a79644ada10207cd41f8027a3d4e506d4cbde58750a98d3ec2afce402d",
+        "date": "2019-10-22",
+        "time": "2019-10-22 19:10:41",
+        "size": 526,
+        "miner": "0xb2930b35844a230f00e51431acae96fe543a0347",
+        "extra_data_hex": "73696e6733",
+        "difficulty": 2374634862657186,
+        "gas_used": 9979194,
+        "gas_limit": 9989371,
+        "logs_bloom": "945c08608049b629008740f22070128c0602c50010d012952a08280b22022b608cc4507918e00962a4a049440320251192429006194812fb587ad87421e4a8002a0401c405658b208898920f828646517f206444b10ec162024807418380a10ac510840006258023002c008c66c52d220e683a2400c643600101a2720a0108446102112d41a0900105000005a212240e1012e1c17502492000c00a84823d1404030894051690f2304e484190028201b280840044a50c0830205403801835151110e354e2288184002073d908070a44e03cb809019308738c211b4100118064a080f1a60003881a880d1144c02100c00c1200488230d91841c02e5884d4b00401",
+        "mix_hash": "3e26a6c8520bdb3afc6ff13d46f8906a508787fc3c8021656f0fe74834728538",
+        "nonce": "2551618406869966062",
+        "receipts_root": "fdcb14f98b77953add5ad2115b74291c1aeeab91e5027e30a888db72ac55d2c1",
+        "sha3_uncles": "1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+        "state_root": "8aab503534b41e0fa32d242829fb5ac1cae3e034db1c22a61cf15be2e2b8ca3f",
+        "transactions_root": "f47354e86bd38e6d7cbd54cd2556fce97221a0f760c518ee226f3f5472432950",
+        "generation": "1250000000000000000",
+        "generation_usd": 217.484378814697
+      }
+    ],
+    "context": {
+      "code": 200,
+      "limit": 1,
+      "offset": 0,
+      "rows": 1,
+      "total_rows": 944557,
+      "state": 8792093,
+      "state_layer_2": 8792080
+    }
+  }
 }
