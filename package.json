@@ -36,6 +36,7 @@
   "homepage": "https://github.com/payfutbol/explorer#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "request": "^2.88.0",
     "sprintf": "^0.1.5"
   }
 }
