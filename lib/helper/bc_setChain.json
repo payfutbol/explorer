@@ -1,0 +1,13 @@
+{
+  "req": [
+    {
+      "name": "symbol",
+      "desc": "you can support symbol String. e.g. 'btc', 'ltc', 'doge', 'bcy'"
+    },
+    {
+      "name": "network",
+      "desc": "you can support network Type. e.g. 'main', 'test3', 'test'"
+    }
+  ],
+  "outputs":[]
+}

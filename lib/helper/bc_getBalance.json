@@ -1,0 +1,25 @@
+{
+  "req": [
+    {
+      "name": "addr",
+      "desc": "you can support symbol String. e.g. 'btc', 'ltc', 'doge', 'bcy'"
+    },
+    {
+      "name": "omnimode",
+      "type": "Boolean",
+      "default": false,
+      "desc": "If omitWalletAddresses is true and you're querying a Wallet or HDWallet, the response will omit address information (useful to speed up the API call for larger wallets)."
+    }
+  ],
+  "outputs":{
+      "address": "1DEP8i3QJCsomS4BSMY2RpU1upv62aGvhD",
+      "total_received": 4433416,
+      "total_sent": 0,
+      "balance": 4433416,
+      "unconfirmed_balance": 0,
+      "final_balance": 4433416,
+      "n_tx": 7,
+      "unconfirmed_n_tx": 0,
+      "final_n_tx": 7
+    }
+}

@@ -42,5 +42,9 @@ module.exports = {
     xlm_chain: ['xlm'],
     omni_chain: ['omni'],
     grs_chain: ['grs']
+  },
+  blockcypherURL: {
+    baseURL: "https://api.blockcypher.com/v1/%s/%s",
+    chain: ['btc', 'doge', 'ltc', 'bcy']
   }
 };

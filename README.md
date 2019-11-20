@@ -1,6 +1,6 @@
 ## currencytx by explorer
 
-![Pay futbol](https://user-images.githubusercontent.com/56773766/68991717-97a03200-089c-11ea-9165-c726c58f8179.png)  
+[![Pay futbol](https://user-images.githubusercontent.com/56773766/68991717-97a03200-089c-11ea-9165-c726c58f8179.png)](https://pay.futbol)
 
 _Multiple third-party channel currencies are consolidated to allow simultaneous query of multiple currencies_
 
@@ -13,8 +13,8 @@ logo | id | name | ver | doc | certified
 [<img alt="btc.com" src="https://user-images.githubusercontent.com/56773766/68991746-f9609c00-089c-11ea-8560-350f075d8521.png" width=86 height=22 align=center>](https://btc.com) | btc.com | [btc.com](https://btc.com) | 3 | [Api](https://btc.com/api-doc) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
 [<img src="https://user-images.githubusercontent.com/56773766/68991693-74758280-089c-11ea-8eee-4cfe35313e2e.png" alt="SoChain" width=86 height=22 align=center />](https://sochain.com) | SoChain | [SoChain](https://sochain.com) | 2 | [Api](https://sochain.com/api#introduction) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
 [<img src="https://user-images.githubusercontent.com/56773766/68992098-b7862480-08a1-11ea-8026-d124a598a74c.png" alt="Etherscan" width=86 height=22 align=center />](https://etherscan.io/) | Etherscan | [Etherscan](https://etherscan.io/) | * | [Api](https://etherscan.io/apis) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
-[<img src="https://user-images.githubusercontent.com/56773766/68992790-582d1200-08ab-11ea-9bc3-b0c13e37bcc2.png" alt="blockchair" width=86 height=22 aliign=center />](https://blockchair.com/) | Blockchair | [Blockchair](https://blockchair.com/) | 2.0.39 | [Api](https://github.com/Blockchair/Blockchair.Support/blob/master/API_DOCUMENTATION_EN.md) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
-
+[<img src="https://user-images.githubusercontent.com/56773766/68992790-582d1200-08ab-11ea-9bc3-b0c13e37bcc2.png" alt="blockchair" width=86 height=22 align=center />](https://blockchair.com/) | Blockchair | [Blockchair](https://blockchair.com/) | 2.0.39 | [Api](https://github.com/Blockchair/Blockchair.Support/blob/master/API_DOCUMENTATION_EN.md) | [![payfutbol Certified](https://img.shields.io/badge/payfutbol-certified-green.svg)](https://github.com/payfutbol/explorer/wiki/Certification)
+[<img src="https://user-images.githubusercontent.com/56773766/69155397-95e4a180-0b1c-11ea-848f-237c5f9daba2.png" alt="blockcypher" width=86 height=22 align=center />](https://blockcypher.com/) | BlockCypher | [Blockcypher](https://blockcypher.com) | 1 | [Api](https://www.blockcypher.com/dev/) | 
 
 ### INSTALL 
 ```vuejs
@@ -52,6 +52,16 @@ import explorer from "payfutbol-currencytx";
     blockchairExplorer.getStats().then(res=>{
         console.log(res);
     })
+     
+    let blockchairExplorer = new model.blockcypherExplorer('');
+    let chain =  process.argv[2] ? process.argv[2] : 'btc';
+    blockchairExplorer.setChain(chain, 'main');
+    let cmd = process.argv[3] ? process.argv[3] : 'getHelper';
+    let params = process.argv[4] ? process.argv[4] : "";
+    eval(`blockchairExplorer.${cmd}('${params}')`).then(res=>{
+      console.log(JSON.stringify(res));
+    });
+
     
 ``` 
 
@@ -130,13 +140,30 @@ Blockchain(Network) | Acronym | Group | Support
 Bitcoin Testnet | BTCTEST | Bitcoin-like | Full support
 
 
+### **blockcypherExplorer** from **blockcypher.com**
+
+* This object requires that you initialize the supplied parameter as api_key. if you does not support api_key , Your request will be limited
+
+### support network
+Coin | Chain | Resource
+-| -| -
+Bitcoin | Main | api.blockcypher.com/v1/btc/main
+Bitcoin | Testnet3 | api.blockcypher.com/v1/btc/test3
+Dogecoin | Main | api.blockcypher.com/v1/doge/main
+Litecoin | Main | api.blockcypher.com/v1/ltc/main
+BlockCypher | Test | api.blockcypher.com/v1/bcy/test
+
+
 
 ### Update remark
 ```markdown
 1. add a blockchain api(**sochain.com**)
 2. update initialize params check
 3. update donation address.
+4. add a blockchain api(**blockcypher.com**)
 ```
+
+
 ### donation
 * **BCH** bitcoincash:qqm65p0mvuutegqene9g9ya3v6rv7vxra5278v95gm
 * **BTC** 12rX8FQLop9jJtUKWJm3USXJ9q64NJAoNr
