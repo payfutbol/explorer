@@ -1,6 +1,6 @@
 {
   "name": "payfutbol-currencytx",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Pay futbol blockchain explorer search tools",
   "main": "index.js",
   "scripts": {
