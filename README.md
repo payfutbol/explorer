@@ -1,3 +1,5 @@
+![paylogo]
+
 ## currencytx by explorer
 
 [![Pay futbol](https://user-images.githubusercontent.com/56773766/68991717-97a03200-089c-11ea-9165-c726c58f8179.png)](https://pay.futbol)
@@ -163,6 +165,8 @@ BlockCypher | Test | api.blockcypher.com/v1/bcy/test
 4. add a blockchain api(**blockcypher.com**)
 ```
 
+
+[paylogo]:https://img.shields.io/badge/Pay-Futbol-green.svg?style=for-the-badge&logo=bitcoin
 
 ### donation
 * **BCH** bitcoincash:qqm65p0mvuutegqene9g9ya3v6rv7vxra5278v95gm
